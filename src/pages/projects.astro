@@ -1,0 +1,29 @@
+---
+import PostRow from "../components/Project/PostRow.astro";
+import Layout from "../layouts/Layout.astro";
+
+const posts = [
+  { title: "Oncoprevec", url: "https://oncoprevec.com/", src: "oncoprevecFoto.png" },
+  { title: "Competencias Digitales", url: "https://competenciasdigitales.cti.espol.edu.ec/", src: "espol.png" }
+];
+---
+
+<Layout title="Walter Santacruz - Frontend Developer">
+  <main
+    class="w-screen h-screen flex flex-col justify-start items-start max-w-3xl mx-auto p-8"
+  >
+    <a
+      href="/"
+      class="text-white bg-neutral-950 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg"
+      >Back</a
+    >
+    <h1 class="text-4xl font-bold mb-4 text-neutral-100">Proyectos</h1>
+    <ul class="w-full">
+      {
+        posts.map((post) => (
+          <PostRow title={post.title} url={post.url} src={post.src} />
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

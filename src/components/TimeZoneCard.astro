@@ -1,0 +1,8 @@
+---
+import Card from "./Card/index.astro";
+import TimeZone from "./TimeZone.tsx";
+---
+
+<Card colSpan="lg:col-span-2" rowSpan="md:row-span-2" title="Zona horaria">
+  <TimeZone client:load />
+</Card>
